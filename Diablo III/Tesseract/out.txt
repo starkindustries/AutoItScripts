@@ -1,0 +1,28 @@
+Running Tesseract
+
+Tessevact ws acommand—hne pvogvam, soﬁvst open atevmmaﬂ ovcommand pvomm The command ws used hke [ms
+
+(esserad lmagename nutputhase {V1 langl [—psm pagesegmndel tmnngme.
+
+ 
+
+So haswc usage to do om on an unage caHed 'myscan pug and save me vesu\tto'ouH.x1'wou\d he
+(esserad myscampng nut
+
+oy to do me same mm Gevman
+(esserad myscampng nut 71 den
+
+Tessevactaﬂso mcmdes a noon mode, wmch pvoduces a spec\a\ HTMLﬁ\e mm me coovdmates ofeach Vettev ms can he used to cveate a
+seavchame par, usmgatom such as Hocv2PDF To use u, use me mcrcormg opnon, hke [ms
+
+(esserad myszampng out new
+
+Move mfovlnauon about me vanous opnons ws avaHah\e m we Tessevact manpage
+
+Other Languages
+
+Tessevact has been named fov many Vanguages, check fov you! Vanguage on me Duv/Nuads page u can a\so he named to suppon othev
+Vanguages and scnms, fov move delaﬂs see TrammgT2ss2ra:l3
+
+Development
+

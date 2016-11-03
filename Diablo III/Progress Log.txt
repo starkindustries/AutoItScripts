@@ -1,0 +1,6 @@
+=====================
++ 2013-01-04 8:20AM +
+=====================
+Tested d3.au3
+- hit F5 and got a 'ErrorStdOut' error.
+- tried putting a ConsoleWrite at the top of the document but got the same error

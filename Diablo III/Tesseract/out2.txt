@@ -1,0 +1,15 @@
+item description 5 amount at items amount/item
+tome of secrets ($19,754) 108 ($183)
+flawless square amethyst ($7,550) 54 ($140)
+crafting costs for 2 star amethysts ($1,000,000) 2 ($500,000)
+sold 2 star amethyst $1,057,402 2 $528,701
+tome of secrets ($9,774) 54 ($181)
+flawless square topaz ($9,288) 54 ($172)
+tome of secrets ($8,172) 54 ($151)
+crafting costs for 2 star topazs ($1,000,000) 2 ($500,000)
+s0|dZ startopazs $1,104,998 2 $552,499
+flawless square topaz ($18,576) 108 ($172)
+tome of secrets ($19,980) 108 ($185)
+crafting costs for 2 star topazs ($1,000,000) 2 ($500,000)
+sold 2 star topazs $1,096,498 2 $548,249
+
