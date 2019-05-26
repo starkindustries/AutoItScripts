@@ -4,8 +4,8 @@
 #include <Color.au3>
 
 HotKeySet("{f2}","ExitProgram")
-HotKeySet("{ESC}","ExitProgram")
-HotKeySet("{5}","FindMatch")
+HotKeySet("{4}", "CastStorm")
+HotKeySet("{5}","ToggleJewelSearch")
 
 ; MouseCoordMode
 ; https://www.autoitscript.com/autoit3/docs/functions/AutoItSetOption.htm#MouseCoordMode
@@ -108,35 +108,66 @@ Local $shouldSearch = false
 While True
 	if ($shouldSearch) Then
 		FindAndClickMatch()
-		$shouldSearch = false
 	EndIf
 WEnd
 
 ; *****************
 ; Functions
 ; *****************
-Func FindMatch()
-	ConsoleWrite("FindMatch Command Acknowledged!" & @CR)
-	$shouldSearch = true
+Func CastStorm()
+	MouseClick("left", 896, 740, 1, 5)
+	MouseClick("left", 298, 386, 1, 5)
+EndFunc
+
+Func ToggleJewelSearch()
+	$shouldSearch = Not $shouldSearch
+	If $shouldSearch Then
+		ConsoleWrite("ToggleJewelSearch: Search ON" & @CR)
+	Else
+		ConsoleWrite("ToggleJewelSearch: Search OFF" & @CR)
+	EndIf
 EndFunc
 
 Func FindAndClickMatch()
 	ConsoleWrite("FindAndClickMatch" & @CR)
+
+	; Find horizontal matches
 	UpdateGemArray()
-	Local $match = FindHorizontalMatches()
-	MouseMove($topLeft[0]-100, $topLeft[1])
+	FindMatches(True)
+	MouseMove($topLeft[0]-100, $topLeft[1], 0)
+
+	Sleep(500)
+
+	; Find vertical matches
+	UpdateGemArray()
+	FindMatches(False)
+	MouseMove($topLeft[0]-100, $bottomRight[1], 0)
+
+	Sleep(500)
 EndFunc
 
-Func SwapPositions($swaps)
-	Local $pos1 = GetBoxPos($swaps[0][0], $swaps[0][1])
-	Local $pos2 = GetBoxPos($swaps[1][0], $swaps[1][1])
-	LeftClick($pos1)
-	LeftClick($pos2)
+Func SwapPositions($swaps, $horizontal)
+	If $horizontal Then
+		Local $pos1 = GetBoxPos($swaps[0][0], $swaps[0][1])
+		Local $pos2 = GetBoxPos($swaps[1][0], $swaps[1][1])
+		LeftClick($pos1, 5)
+		LeftClick($pos2, 5)
+	Else
+		Local $pos1 = GetBoxPos($swaps[0][1], $swaps[0][0])
+		Local $pos2 = GetBoxPos($swaps[1][1], $swaps[1][0])
+		LeftClick($pos1, 5)
+		LeftClick($pos2, 5)
+	EndIf
 EndFunc
 
 ; Note this function first finds two in a row and then searches for a third adjacent match
-Func FindHorizontalMatches()
-	Local $allSwaps[1]
+Func FindMatches($horizontal=True)
+	If $horizontal Then
+		; do nothing
+	Else
+		_ArrayTranspose($gems)
+	EndIf
+
 	; Search from top to bottom
 	For $y=0 to 7 Step 1
 		For $x=0 To 6 Step 1
@@ -166,7 +197,7 @@ Func FindHorizontalMatches()
 							; [$x-1, $y]   this is the cell just below the matching gem
 							ConsoleWrite("FOUND PATTERN #1" & @CR)
 							Local $swaps[2][2] = [[$x-1, $y-1], [$x-1, $y]]
-							SwapPositions($swaps)
+							SwapPositions($swaps, $horizontal)
 						EndIf
 					EndIf
 
@@ -179,7 +210,7 @@ Func FindHorizontalMatches()
 							; [$x-1, $y]   this is the cell just above the matching gem
 							ConsoleWrite("FOUND PATTERN #2" & @CR)
 							Local $swaps[2][2] = [[$x-1, $y+1], [$x-1, $y]]
-							SwapPositions($swaps)
+							SwapPositions($swaps, $horizontal)
 						EndIf
 					EndIf
 				EndIf
@@ -196,7 +227,7 @@ Func FindHorizontalMatches()
 							; [$x+2, $y]   this is the cell just below the matching gem
 							ConsoleWrite("FOUND PATTERN #3" & @CR)
 							Local $swaps[2][2] = [[$x+2, $y-1], [$x+2, $y]]
-							SwapPositions($swaps)
+							SwapPositions($swaps, $horizontal)
 						EndIf
 					EndIf
 
@@ -209,7 +240,7 @@ Func FindHorizontalMatches()
 							; [$x+2, $y]   this is the cell just above the matching gem
 							ConsoleWrite("FOUND PATTERN #4" & @CR)
 							Local $swaps[2][2] = [[$x+2, $y+1], [$x+2, $y]]
-							SwapPositions($swaps)
+							SwapPositions($swaps, $horizontal)
 						EndIf
 					EndIf
 				EndIf
@@ -220,7 +251,7 @@ Func FindHorizontalMatches()
 					If $gems[$y][$x-2] == $color Then
 						ConsoleWrite("FOUND PATTERN #5" & @CR)
 						Local $swaps[2][2] = [[$x-2, $y], [$x-1, $y]]
-						SwapPositions($swaps)
+						SwapPositions($swaps, $horizontal)
 					EndIf
 				EndIf
 
@@ -230,7 +261,7 @@ Func FindHorizontalMatches()
 					If $gems[$y][$x+3] == $color Then
 						ConsoleWrite("FOUND PATTERN #6" & @CR)
 						Local $swaps[2][2] = [[$x+3, $y], [$x+2, $y]]
-						SwapPositions($swaps)
+						SwapPositions($swaps, $horizontal)
 					EndIf
 				EndIf
 			EndIf
@@ -246,7 +277,7 @@ Func FindHorizontalMatches()
 						If $gems[$y-1][$x+1] == $color Then
 							ConsoleWrite("FOUND PATTERN #7" & @CR)
 							Local $swaps[2][2] = [[$x+1, $y], [$x+1, $y-1]]
-							SwapPositions($swaps)
+							SwapPositions($swaps, $horizontal)
 						EndIf
 					EndIf
 
@@ -257,7 +288,7 @@ Func FindHorizontalMatches()
 						If $gems[$y+1][$x+1] == $color Then
 							ConsoleWrite("FOUND PATTERN #8" & @CR)
 							Local $swaps[2][2] = [[$x+1, $y], [$x+1, $y+1]]
-							SwapPositions($swaps)
+							SwapPositions($swaps, $horizontal)
 						EndIf
 					EndIf
 				EndIf
