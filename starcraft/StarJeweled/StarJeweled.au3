@@ -4,6 +4,9 @@
 #include <Color.au3>
 
 HotKeySet("{f2}","ExitProgram")
+HotKeySet("{1}", "CastWarpCell")
+HotKeySet("{2}", "CastTimeBomb")
+HotKeySet("{3}", "CastHeal")
 HotKeySet("{4}", "CastStorm")
 HotKeySet("{5}","ToggleJewelSearch")
 
@@ -114,8 +117,25 @@ WEnd
 ; *****************
 ; Functions
 ; *****************
+; Disables Target
+Func CastWarpCell()
+	MouseClick("left", 750, 745, 1, 5)
+	MouseClick("left", 298, 386, 1, 5)
+EndFunc
+
+; Slows enemies
+Func CastTimeBomb()
+	MouseClick("left", 799, 745, 1, 5)
+	MouseClick("left", 298, 386, 1, 5)
+EndFunc
+
+Func CastHeal()
+	MouseClick("left", 846, 745, 1, 5)
+	MouseClick("left", 298, 386, 1, 5)
+EndFunc
+
 Func CastStorm()
-	MouseClick("left", 896, 740, 1, 5)
+	MouseClick("left", 896, 745, 1, 5)
 	MouseClick("left", 298, 386, 1, 5)
 EndFunc
 
@@ -133,17 +153,15 @@ Func FindAndClickMatch()
 
 	; Find horizontal matches
 	UpdateGemArray()
-	FindMatches(True)
-	MouseMove($topLeft[0]-100, $topLeft[1], 0)
-
-	Sleep(500)
-
-	; Find vertical matches
-	UpdateGemArray()
-	FindMatches(False)
-	MouseMove($topLeft[0]-100, $bottomRight[1], 0)
-
-	Sleep(500)
+	Local $horizontalMatchFound = FindMatches(True)
+	If $horizontalMatchFound Then
+		MouseMove($topLeft[0]-100, $topLeft[1], 0)
+	Else
+		; Find vertical matches
+		UpdateGemArray()
+		FindMatches(False)
+		MouseMove($topLeft[0]-100, $bottomRight[1], 0)
+	EndIf
 EndFunc
 
 Func SwapPositions($swaps, $horizontal)
@@ -162,6 +180,8 @@ EndFunc
 
 ; Note this function first finds two in a row and then searches for a third adjacent match
 Func FindMatches($horizontal=True)
+	Local $matchFound = false
+
 	If $horizontal Then
 		; do nothing
 	Else
@@ -198,6 +218,7 @@ Func FindMatches($horizontal=True)
 							ConsoleWrite("FOUND PATTERN #1" & @CR)
 							Local $swaps[2][2] = [[$x-1, $y-1], [$x-1, $y]]
 							SwapPositions($swaps, $horizontal)
+							$matchFound = true
 						EndIf
 					EndIf
 
@@ -211,6 +232,7 @@ Func FindMatches($horizontal=True)
 							ConsoleWrite("FOUND PATTERN #2" & @CR)
 							Local $swaps[2][2] = [[$x-1, $y+1], [$x-1, $y]]
 							SwapPositions($swaps, $horizontal)
+							$matchFound = true
 						EndIf
 					EndIf
 				EndIf
@@ -228,6 +250,7 @@ Func FindMatches($horizontal=True)
 							ConsoleWrite("FOUND PATTERN #3" & @CR)
 							Local $swaps[2][2] = [[$x+2, $y-1], [$x+2, $y]]
 							SwapPositions($swaps, $horizontal)
+							$matchFound = true
 						EndIf
 					EndIf
 
@@ -241,6 +264,7 @@ Func FindMatches($horizontal=True)
 							ConsoleWrite("FOUND PATTERN #4" & @CR)
 							Local $swaps[2][2] = [[$x+2, $y+1], [$x+2, $y]]
 							SwapPositions($swaps, $horizontal)
+							$matchFound = true
 						EndIf
 					EndIf
 				EndIf
@@ -252,6 +276,7 @@ Func FindMatches($horizontal=True)
 						ConsoleWrite("FOUND PATTERN #5" & @CR)
 						Local $swaps[2][2] = [[$x-2, $y], [$x-1, $y]]
 						SwapPositions($swaps, $horizontal)
+						$matchFound = true
 					EndIf
 				EndIf
 
@@ -262,6 +287,7 @@ Func FindMatches($horizontal=True)
 						ConsoleWrite("FOUND PATTERN #6" & @CR)
 						Local $swaps[2][2] = [[$x+3, $y], [$x+2, $y]]
 						SwapPositions($swaps, $horizontal)
+						$matchFound = true
 					EndIf
 				EndIf
 			EndIf
@@ -278,6 +304,7 @@ Func FindMatches($horizontal=True)
 							ConsoleWrite("FOUND PATTERN #7" & @CR)
 							Local $swaps[2][2] = [[$x+1, $y], [$x+1, $y-1]]
 							SwapPositions($swaps, $horizontal)
+							$matchFound = true
 						EndIf
 					EndIf
 
@@ -289,6 +316,7 @@ Func FindMatches($horizontal=True)
 							ConsoleWrite("FOUND PATTERN #8" & @CR)
 							Local $swaps[2][2] = [[$x+1, $y], [$x+1, $y+1]]
 							SwapPositions($swaps, $horizontal)
+							$matchFound = true
 						EndIf
 					EndIf
 				EndIf
@@ -296,6 +324,8 @@ Func FindMatches($horizontal=True)
 
 		Next
 	Next
+
+	return $matchFound
 EndFunc
 
 Func UpdateGemArray()
