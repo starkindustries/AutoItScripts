@@ -124,28 +124,23 @@ Func FindAndClickMatch()
 	ConsoleWrite("FindAndClickMatch" & @CR)
 	UpdateGemArray()
 	Local $match = FindHorizontalMatches()
-	If @error Then
-		ConsoleWrite("No matches found." & @CR)
-	Else
-		Local $pos1 = GetBoxPos($match[0][0], $match[0][1])
-		Local $pos2 = GetBoxPos($match[1][0], $match[1][1])
-		LeftClick($pos1)
-		LeftClick($pos2)
-	EndIf
 	MouseMove($topLeft[0]-100, $topLeft[1])
 EndFunc
 
+Func SwapPositions($swaps)
+	Local $pos1 = GetBoxPos($swaps[0][0], $swaps[0][1])
+	Local $pos2 = GetBoxPos($swaps[1][0], $swaps[1][1])
+	LeftClick($pos1)
+	LeftClick($pos2)
+EndFunc
+
 ; Note this function first finds two in a row and then searches for a third adjacent match
-; ** TODO **
-; Search for [x][ ][x][x] patterns
-; Search for:
-; [x][ ][x]
-;    [x]
 Func FindHorizontalMatches()
 	Local $allSwaps[1]
 	; Search from top to bottom
 	For $y=0 to 7 Step 1
 		For $x=0 To 6 Step 1
+
 			Local $color = $gems[$y][$x]
 
 			; If gem is the same as the gem to the right, we found two in a row
@@ -169,10 +164,9 @@ Func FindHorizontalMatches()
 						If $gems[$y-1][$x-1] == $color Then
 							; [$x-1, $y-1] this is the 3rd matching gem
 							; [$x-1, $y]   this is the cell just below the matching gem
-							ConsoleWrite("MATCH FOUND #1" & @CR)
-							ConsoleWrite("[" & $x-1 & ", " & $y-1 & "] & [" & $x-1 & ", " & $y & "]" & @CR)
+							ConsoleWrite("FOUND PATTERN #1" & @CR)
 							Local $swaps[2][2] = [[$x-1, $y-1], [$x-1, $y]]
-							Return $swaps
+							SwapPositions($swaps)
 						EndIf
 					EndIf
 
@@ -183,10 +177,9 @@ Func FindHorizontalMatches()
 						If $gems[$y+1][$x-1] == $color Then
 							; [$x-1, $y+1] this is the 3rd matching gem
 							; [$x-1, $y]   this is the cell just above the matching gem
-							ConsoleWrite("MATCH FOUND #2" & @CR)
-							ConsoleWrite("[" & $x-1 & ", " & $y+1 & "] & [" & $x-1 & ", " & $y & "]" & @CR)
+							ConsoleWrite("FOUND PATTERN #2" & @CR)
 							Local $swaps[2][2] = [[$x-1, $y+1], [$x-1, $y]]
-							Return $swaps
+							SwapPositions($swaps)
 						EndIf
 					EndIf
 				EndIf
@@ -201,10 +194,9 @@ Func FindHorizontalMatches()
 						If $gems[$y-1][$x+2] == $color Then
 							; [$x+2, $y-1] this is the 3rd matching gem
 							; [$x+2, $y]   this is the cell just below the matching gem
-							ConsoleWrite("MATCH FOUND #3" & @CR)
-							ConsoleWrite("[" & $x+2 & ", " & $y-1 & "] & [" & $x+2 & ", " & $y & "]" & @CR)
+							ConsoleWrite("FOUND PATTERN #3" & @CR)
 							Local $swaps[2][2] = [[$x+2, $y-1], [$x+2, $y]]
-							Return $swaps
+							SwapPositions($swaps)
 						EndIf
 					EndIf
 
@@ -215,37 +207,64 @@ Func FindHorizontalMatches()
 						If $gems[$y+1][$x+2] == $color Then
 							; [$x+2, $y+1] this is the 3rd matching gem
 							; [$x+2, $y]   this is the cell just above the matching gem
-							ConsoleWrite("MATCH FOUND #4" & @CR)
-							ConsoleWrite("[" & $x+2 & ", " & $y+1 & "] & [" & $x+2 & ", " & $y & "]" & @CR)
+							ConsoleWrite("FOUND PATTERN #4" & @CR)
 							Local $swaps[2][2] = [[$x+2, $y+1], [$x+2, $y]]
-							Return $swaps
+							SwapPositions($swaps)
 						EndIf
 					EndIf
 				EndIf
 
-				; Check for [x][ ][x][x] pattern
+				; Check for pattern:
+				; [x][ ][x][x]
 				If $x > 1 Then
 					If $gems[$y][$x-2] == $color Then
-						ConsoleWrite("MATCH FOUND #5" & @CR)
-						ConsoleWrite("[" & $x-2 & ", " & $y & "] & [" & $x-1 & ", " & $y & "]" & @CR)
+						ConsoleWrite("FOUND PATTERN #5" & @CR)
 						Local $swaps[2][2] = [[$x-2, $y], [$x-1, $y]]
-						Return $swaps
+						SwapPositions($swaps)
 					EndIf
 				EndIf
 
-				; Check for [x][x][ ][x] pattern
+				; Check for pattern:
+				; [x][x][ ][x]
 				If $x < 5 Then
 					If $gems[$y][$x+3] == $color Then
-						ConsoleWrite("MATCH FOUND #6" & @CR)
-						ConsoleWrite("[" & $x+3 & ", " & $y & "] & [" & $x+2 & ", " & $y & "]" & @CR)
+						ConsoleWrite("FOUND PATTERN #6" & @CR)
 						Local $swaps[2][2] = [[$x+3, $y], [$x+2, $y]]
-						Return $swaps
+						SwapPositions($swaps)
 					EndIf
 				EndIf
 			EndIf
+
+			; Check for the middle patterns
+			If $x < 6 Then
+				If $gems[$y][$x+2] == $color Then
+
+					; Check
+					;    [x]
+					; [x][ ][x]
+					If $y > 0 Then
+						If $gems[$y-1][$x+1] == $color Then
+							ConsoleWrite("FOUND PATTERN #7" & @CR)
+							Local $swaps[2][2] = [[$x+1, $y], [$x+1, $y-1]]
+							SwapPositions($swaps)
+						EndIf
+					EndIf
+
+					; Check
+					; [x][ ][x]
+					;    [x]
+					If $y < 7 Then
+						If $gems[$y+1][$x+1] == $color Then
+							ConsoleWrite("FOUND PATTERN #8" & @CR)
+							Local $swaps[2][2] = [[$x+1, $y], [$x+1, $y+1]]
+							SwapPositions($swaps)
+						EndIf
+					EndIf
+				EndIf
+			EndIf
+
 		Next
 	Next
-	SetError(1) ; No match found
 EndFunc
 
 Func UpdateGemArray()
