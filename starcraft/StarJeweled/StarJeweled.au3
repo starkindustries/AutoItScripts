@@ -1,11 +1,26 @@
 ; StarJeweled
 #include <toolbox.au3>
 #include <Array.au3>
+#include <Color.au3>
 
 HotKeySet("{f2}","ExitProgram")
 HotKeySet("{ESC}","ExitProgram")
+HotKeySet("{5}","FindMatch")
 
-Local $debug = false
+; MouseCoordMode
+; https://www.autoitscript.com/autoit3/docs/functions/AutoItSetOption.htm#MouseCoordMode
+; Sets the way coords are used in the mouse functions, either absolute coords or coords
+; relative to the current active window:
+; 0 = relative coords to the active window
+AutoItSetOption("MouseCoordMode", 0)
+; PixelCoordMode
+; Sets the way coords are used in the pixel functions, either absolute coords or coords relative to the window defined by hwnd
+AutoItSetOption("PixelCoordMode", 0)
+
+Local $debug = False
+
+Local $hWnd = WinWait("StarCraft")
+WinActivate($hWnd)
 
 ; *****************
 ; The Jewel Grid
@@ -14,8 +29,8 @@ Local $debug = false
 ; GetMousePos()
 
 ; The top left and bottom right coordinates of the jewel grid
-Local $topLeft[2] = [1286, 118]
-Local $bottomRight[2] = [1831, 660]
+Local $topLeft[2] = [593, 103]
+Local $bottomRight[2] = [1005, 512]
 
 ; The total width (x) and height (y) of the jewel grid
 Local $xLength = $bottomRight[0] - $topLeft[0]
@@ -51,21 +66,29 @@ EndIf
 ; * Green gas 0x9AFE53, 0x6DFE3C
 ; * Black/white/gray skull 0x353A3E
 
-; Color array      [yellow, purple, red, blue, green, gray]
-Local $colors[6] = [0xBF9105, 0x720987, 0xD22E0A, 0x53C8FC, 0x6DFE3C, 0x353A3E]
-Local $colorAbbreviation[6] = ["yl", "pr", "rd", "bl", "gr", "gy"]
+; Color array      [yellow,   purple,   red,      blue,     green,    gray]
+Local $colors[6] = [0xFEFD61, 0x983DB8, 0xFE430F, 0x53C8FC, 0x6DFE3C, 0x52595C]
+; Abbreviations: y=yellow, p=purple, r=red, b=blue, g=green, a=gray
+Local $colorAbbreviation[6] = ["y", "p", "r", "b", "g", "a"]
+Local $yellowRGB = _ColorGetRGB($colors[0])
+Local $purpleRGB = _ColorGetRGB($colors[1])
+Local $redRGB    = _ColorGetRGB($colors[2])
+Local $blueRGB   = _ColorGetRGB($colors[3])
+Local $greenRGB  = _ColorGetRGB($colors[4])
+Local $grayRGB   = _ColorGetRGB($colors[5])
 
 ; *****************
 ; Gem Array
 ; *****************
 ; This var holds all the gem values
 Local $gems[8][8]
+Local $rawColors[8][8]
 
 UpdateGemArray()
 
 If $debug Then
-	VerifySampleGemArray()
-	_ArrayDisplay($gems, "Gems")
+	_ArrayDisplay($rawColors, "Colors")
+	_ArrayDisplay($gems, "Colors")
 EndIf
 
 ; *******************
@@ -78,7 +101,7 @@ EndIf
 ; 3. Match more than 3 if possible
 
 ; Type 'F' to start the search
-HotKeySet("{5}","FindMatch")
+; This is defined at the top: HotKeySet("{5}","FindMatch")
 
 Local $shouldSearch = false
 
@@ -114,14 +137,14 @@ EndFunc
 
 ; Note this function first finds two in a row and then searches for a third adjacent match
 ; ** TODO **
-; Search for [a][b][a][a] patterns
+; Search for [x][ ][x][x] patterns
 ; Search for:
-; [a][b][a]
-;    [a]
+; [x][ ][x]
+;    [x]
 Func FindHorizontalMatches()
 	Local $allSwaps[1]
-	; Search from bottom up
-	For $y=7 to 0 Step -1
+	; Search from top to bottom
+	For $y=0 to 7 Step 1
 		For $x=0 To 6 Step 1
 			Local $color = $gems[$y][$x]
 
@@ -138,24 +161,29 @@ Func FindHorizontalMatches()
 				; First check left side of gems
 				If $x > 0 Then
 
-					; Check left top; mfake sure y is within bounds
+					; Check for this pattern (top left):
+					; [x]
+					; [ ][x][x]
+					; Make sure y is within bounds
 					If $y > 0 Then
 						If $gems[$y-1][$x-1] == $color Then
 							; [$x-1, $y-1] this is the 3rd matching gem
 							; [$x-1, $y]   this is the cell just below the matching gem
-							ConsoleWrite("MATCH FOUND1" & @CR)
+							ConsoleWrite("MATCH FOUND #1" & @CR)
 							ConsoleWrite("[" & $x-1 & ", " & $y-1 & "] & [" & $x-1 & ", " & $y & "]" & @CR)
 							Local $swaps[2][2] = [[$x-1, $y-1], [$x-1, $y]]
 							Return $swaps
 						EndIf
 					EndIf
 
-					; Check left bottom; make sure y is within bounds
+					; Check for this pattern (bottom left):
+					; [ ][x][x]
+					; [x]
 					If $y < 7 Then
 						If $gems[$y+1][$x-1] == $color Then
 							; [$x-1, $y+1] this is the 3rd matching gem
 							; [$x-1, $y]   this is the cell just above the matching gem
-							ConsoleWrite("MATCH FOUND2" & @CR)
+							ConsoleWrite("MATCH FOUND #2" & @CR)
 							ConsoleWrite("[" & $x-1 & ", " & $y+1 & "] & [" & $x-1 & ", " & $y & "]" & @CR)
 							Local $swaps[2][2] = [[$x-1, $y+1], [$x-1, $y]]
 							Return $swaps
@@ -166,24 +194,28 @@ Func FindHorizontalMatches()
 				; Now check the right side of the gems
 				If $x < 6 Then
 
-					; Check right top
+					; Check for this pattern (top right):
+					;       [x]
+					; [x][x][ ]
 					If $y > 0 Then
 						If $gems[$y-1][$x+2] == $color Then
 							; [$x+2, $y-1] this is the 3rd matching gem
 							; [$x+2, $y]   this is the cell just below the matching gem
-							ConsoleWrite("MATCH FOUND3" & @CR)
+							ConsoleWrite("MATCH FOUND #3" & @CR)
 							ConsoleWrite("[" & $x+2 & ", " & $y-1 & "] & [" & $x+2 & ", " & $y & "]" & @CR)
 							Local $swaps[2][2] = [[$x+2, $y-1], [$x+2, $y]]
 							Return $swaps
 						EndIf
 					EndIf
 
-					; Check right bottom
+					; Check for this pattern (bottom right):
+					; [x][x][ ]
+					;       [x]
 					If $y < 7 Then
 						If $gems[$y+1][$x+2] == $color Then
 							; [$x+2, $y+1] this is the 3rd matching gem
 							; [$x+2, $y]   this is the cell just above the matching gem
-							ConsoleWrite("MATCH FOUND4" & @CR)
+							ConsoleWrite("MATCH FOUND #4" & @CR)
 							ConsoleWrite("[" & $x+2 & ", " & $y+1 & "] & [" & $x+2 & ", " & $y & "]" & @CR)
 							Local $swaps[2][2] = [[$x+2, $y+1], [$x+2, $y]]
 							Return $swaps
@@ -191,87 +223,88 @@ Func FindHorizontalMatches()
 					EndIf
 				EndIf
 
+				; Check for [x][ ][x][x] pattern
+				If $x > 1 Then
+					If $gems[$y][$x-2] == $color Then
+						ConsoleWrite("MATCH FOUND #5" & @CR)
+						ConsoleWrite("[" & $x-2 & ", " & $y & "] & [" & $x-1 & ", " & $y & "]" & @CR)
+						Local $swaps[2][2] = [[$x-2, $y], [$x-1, $y]]
+						Return $swaps
+					EndIf
+				EndIf
+
+				; Check for [x][x][ ][x] pattern
+				If $x < 5 Then
+					If $gems[$y][$x+3] == $color Then
+						ConsoleWrite("MATCH FOUND #6" & @CR)
+						ConsoleWrite("[" & $x+3 & ", " & $y & "] & [" & $x+2 & ", " & $y & "]" & @CR)
+						Local $swaps[2][2] = [[$x+3, $y], [$x+2, $y]]
+						Return $swaps
+					EndIf
+				EndIf
 			EndIf
 		Next
 	Next
 	SetError(1) ; No match found
 EndFunc
 
-; This function will compares a screenshot to values obtained from UpdateGemArray
-Func VerifySampleGemArray()
-	; Sample screenshot values:
-	Local $sampleGems[8][8] = [ _
-		["gy", "pr", "rd", "yl", "gy", "gy", "pr", "rd"], _
-		["rd", "yl", "gy", "rd", "rd", "gr", "bl", "gr"], _
-		["yl", "bl", "bl", "gr", "yl", "yl", "gy", "gy"], _
-		["yl", "rd", "gy", "pr", "rd", "gy", "yl", "rd"], _
-		["pr", "yl", "gy", "gy", "pr", "gy", "yl", "rd"], _
-		["rd", "yl", "rd", "gr", "pr", "rd", "pr", "gy"], _
-		["yl", "pr", "yl", "gy", "yl", "gr", "gr", "gy"], _
-		["pr", "bl", "yl", "gr", "yl", "rd", "gr", "yl"]]
-
-	For $y=0 To 7 Step 1
-		For $x=0 To 7 Step 1
-			If $sampleGems[$y][$x] == $gems[$y][$x] Then
-				; good
-			Else
-				; error
-				ConsoleWrite("Non-match found at: [" & $x & ", " & $y & "] " & $sampleGems[$y][$x] & " vs " & $gems[$y][$x])
-			EndIf
-		Next
-	Next
-EndFunc
-
 Func UpdateGemArray()
 	; loop from left to right, top down
-	For $y=0 To 7 Step 1
-		For $x=0 To 7 Step 1
-			Local $box = GetBoxPos($x, $y)
-			Local $colorIndex = GetBoxColorIndex($box)
-			If Not @error Then
-				$gems[$y][$x] = $colorAbbreviation[$colorIndex]
-				; ConsoleWrite("[" & $x & ", " & $y & "]: " & $colorAbbreviation[$colorIndex] & @CR)
-			Else
-				$gems[$y][$x] = -1
-			EndIf
+	For $x=0 To 7 Step 1
+		For $y=0 To 7 Step 1
+			$gems[$y][$x] = GetBoxColor($x, $y)
 		Next
 	Next
 EndFunc
 
-; Pixel Search
-; https://www.autoitscript.com/autoit3/docs/functions/PixelSearch.htm
-Func GetBoxColorIndex($box)
-	; Pixel search properties
-	Local $len = 10
-	Local $shadeVariation = 20
-	Local $step = 2
+Func GetBoxColor($x, $y)
+	Local $box = GetBoxPos($x, $y)
+	Local $yOffset = -18
 
-	For $i=0 To 5 Step 1
-		Local $color = $colors[$i]
+	; To visualize the checked color location, enable this line
+	; MouseMove($box[0], $box[1]+$yOffset)
 
-		; To visualize the pixel search, enable these two lines
-		If $debug Then
-			MouseMove($box[0]-$len, $box[1]-$len, 10)
-			MouseMove($box[0]+$len, $box[1]+$len, 10)
-		EndIf
+	Local $color = PixelGetColor($box[0], $box[1] + $yOffset, $hWnd)
+	$rawColors[$y][$x] = Hex($color)
 
-		; PixelSearch ( left, top, right, bottom, color [, shade-variation = 0 [, step = 1 [, hwnd]]] )
-		Local $coord = PixelSearch($box[0]-$len, $box[1]-$len, $box[0]+$len, $box[1]+$len, $color, $shadeVariation, $step)
-		If Not @error Then
-			Return $i
-		EndIf
-	Next
-	SetError(1) ; No matching color found
+	; Calculate the color differences
+	Local $rgb = _ColorGetRGB($color)
+	Local $diffs[6]
+	$diffs[0] = CalculateColorDiff($rgb, $yellowRGB)
+	$diffs[1] = CalculateColorDiff($rgb, $purpleRGB)
+	$diffs[2] = CalculateColorDiff($rgb, $redRGB)
+	$diffs[3] = CalculateColorDiff($rgb, $blueRGB)
+	$diffs[4] = CalculateColorDiff($rgb, $greenRGB)
+	$diffs[5] = CalculateColorDiff($rgb, $grayRGB)
+
+	Local $minIndex = _ArrayMinIndex($diffs)
+
+	If $debug Then
+		ConsoleWrite("[" & $x & ", " & $y & "]: " & $color & @CR)
+		ConsoleWrite("RGB: " & $rgb[0] & " " & $rgb[1] & " " & $rgb[2] & @CR)
+		ConsoleWrite("Min difference: " & $diffs[$minIndex] & @CR)
+	EndIf
+
+	return $colorAbbreviation[$minIndex]
+EndFunc
+
+; Color Difference
+; https://en.wikipedia.org/wiki/Color_difference#Euclidean
+; Formula:
+; (r2-r1)^2 + (g2-g1)^2 + (b2-b1)^2
+Func CalculateColorDiff($rgb1, $rgb2)
+	Local $diff = ($rgb2[0]-$rgb1[0])^2 + ($rgb2[1]-$rgb1[1])^2 + ($rgb2[2]-$rgb1[2])^2
+	return $diff
 EndFunc
 
 Func CheckPositions()
-	LeftClick($topLeft)
+	MouseMove($topLeft[0], $topLeft[1], 0)
 	ToolTip("Top Left")
 
 	For $y=0 To 7 Step 1
 		For $x=0 To 7 Step 1
 			Local $pos = GetBoxPos($x, $y)
-			LeftClick($pos, 10)
+			MouseMove($pos[0], $pos[1], 0)
 			ToolTip("Box [" & $x & ", " & $y & "]")
 			ConsoleWrite("[" & $pos[0] & ", " & $pos[1] & "]" & @CR)
 		Next
