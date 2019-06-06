@@ -4,7 +4,7 @@
 
 #Region ### START Koda GUI section
 ### Form=c:\users\zionp\desktop\playgrounds\autoitscripts\starcraft\starjeweled\starjeweledgui.kxf
-Local $StarJeweledGUI = GUICreate("StarJeweledGUI", 274, 274, 340, 134)
+Local $StarJeweledGUI = GUICreate("StarJeweledGUI", 274, 274, 1390, 50)
 
 Local $boxes[8][8]
 Local $boxSize = 32
@@ -23,11 +23,15 @@ Next
 GUISetState(@SW_SHOW)
 #EndRegion ### END Koda GUI section ###
 
+#include <StarJeweled.au3>
+
 While 1
 	Local $nMsg = GUIGetMsg()
 	Switch $nMsg
 		Case $GUI_EVENT_CLOSE
 			Exit
-
 	EndSwitch
+	if ($shouldSearch) Then
+		FindAndClickMatch($boxes)
+	EndIf
 WEnd

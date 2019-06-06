@@ -87,12 +87,12 @@ Local $grayRGB   = _ColorGetRGB($colors[5])
 Local $gems[8][8]
 Local $rawColors[8][8]
 
-UpdateGemArray()
+;~ UpdateGemArray()
 
-If $debug Then
-	_ArrayDisplay($rawColors, "Colors")
-	_ArrayDisplay($gems, "Colors")
-EndIf
+;~ If $debug Then
+;~ 	_ArrayDisplay($rawColors, "Colors")
+;~ 	_ArrayDisplay($gems, "Colors")
+;~ EndIf
 
 ; *******************
 ; Find & Click Match
@@ -108,11 +108,11 @@ EndIf
 
 Local $shouldSearch = false
 
-While True
-	if ($shouldSearch) Then
-		FindAndClickMatch()
-	EndIf
-WEnd
+;~ While True
+;~ 	if ($shouldSearch) Then
+;~ 		FindAndClickMatch()
+;~ 	EndIf
+;~ WEnd
 
 ; *****************
 ; Functions
@@ -148,33 +148,35 @@ Func ToggleJewelSearch()
 	EndIf
 EndFunc
 
-Func FindAndClickMatch()
+Func FindAndClickMatch($boxes)
 	ConsoleWrite("FindAndClickMatch" & @CR)
 
 	; Find horizontal matches
-	UpdateGemArray()
+	UpdateGemArray($boxes)
 	Local $horizontalMatchFound = FindMatches(True)
 	If $horizontalMatchFound Then
 		MouseMove($topLeft[0]-100, $topLeft[1], 0)
 	Else
 		; Find vertical matches
-		UpdateGemArray()
+		UpdateGemArray($boxes)
 		FindMatches(False)
 		MouseMove($topLeft[0]-100, $bottomRight[1], 0)
 	EndIf
 EndFunc
 
+Local $clickSpeed = 100
+
 Func SwapPositions($swaps, $horizontal)
 	If $horizontal Then
 		Local $pos1 = GetBoxPos($swaps[0][0], $swaps[0][1])
 		Local $pos2 = GetBoxPos($swaps[1][0], $swaps[1][1])
-		LeftClick($pos1, 5)
-		LeftClick($pos2, 5)
+		LeftClick($pos1, $clickSpeed)
+		LeftClick($pos2, $clickSpeed)
 	Else
 		Local $pos1 = GetBoxPos($swaps[0][1], $swaps[0][0])
 		Local $pos2 = GetBoxPos($swaps[1][1], $swaps[1][0])
-		LeftClick($pos1, 5)
-		LeftClick($pos2, 5)
+		LeftClick($pos1, $clickSpeed)
+		LeftClick($pos2, $clickSpeed)
 	EndIf
 EndFunc
 
@@ -328,16 +330,19 @@ Func FindMatches($horizontal=True)
 	return $matchFound
 EndFunc
 
-Func UpdateGemArray()
+Func UpdateGemArray($boxes)
 	; loop from left to right, top down
 	For $x=0 To 7 Step 1
 		For $y=0 To 7 Step 1
-			$gems[$y][$x] = GetBoxColor($x, $y)
+			Local $colorIndex = GetBoxColorAndIndex($x, $y)
+			$gems[$y][$x] = $colorIndex[0]
+			Local $index = $colorIndex[1]
+			GUICtrlSetBkColor($boxes[$y][$x], $colors[$index])
 		Next
 	Next
 EndFunc
 
-Func GetBoxColor($x, $y)
+Func GetBoxColorAndIndex($x, $y)
 	Local $box = GetBoxPos($x, $y)
 	Local $yOffset = -18
 
@@ -365,7 +370,8 @@ Func GetBoxColor($x, $y)
 		ConsoleWrite("Min difference: " & $diffs[$minIndex] & @CR)
 	EndIf
 
-	return $colorAbbreviation[$minIndex]
+	Local $colorAndIndex[2] = [$colorAbbreviation[$minIndex], $minIndex]
+	return $colorAndIndex
 EndFunc
 
 ; Color Difference
