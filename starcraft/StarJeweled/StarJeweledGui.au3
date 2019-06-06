@@ -2,6 +2,11 @@
 #include <StaticConstants.au3>
 #include <WindowsConstants.au3>
 
+
+#****************************************
+# STAR JEWELED ROCKSTAR VICTORY!!!!!!!!!!
+#****************************************
+
 #Region ### START Koda GUI section
 ### Form=c:\users\zionp\desktop\playgrounds\autoitscripts\starcraft\starjeweled\starjeweledgui.kxf
 Local $StarJeweledGUI = GUICreate("StarJeweledGUI", 274, 274, 1390, 50)

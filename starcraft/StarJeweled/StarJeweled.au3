@@ -164,7 +164,7 @@ Func FindAndClickMatch($boxes)
 	EndIf
 EndFunc
 
-Local $clickSpeed = 100
+Local $clickSpeed = 2
 
 Func SwapPositions($swaps, $horizontal)
 	If $horizontal Then
