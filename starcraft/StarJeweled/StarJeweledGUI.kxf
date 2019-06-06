@@ -1,0 +1,1186 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<object type="TAForm" name="StarJeweledGUI">
+	<properties>
+		<property name="Left" vt="Int16">340</property>
+		<property name="Top" vt="Int16">134</property>
+		<property name="Width" vt="Int16">289</property>
+		<property name="Height" vt="Int16">312</property>
+		<property name="Caption" vt="String">StarJeweledGUI</property>
+		<property name="Color" vt="Ident">clBtnFace</property>
+		<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
+		<property name="Font.Color" vt="Ident">clWindowText</property>
+		<property name="Font.Height" vt="Int8">-11</property>
+		<property name="Font.Name" vt="String">MS Sans Serif</property>
+		<property name="Font.Style" vt="Set"/>
+		<property name="OldCreateOrder" vt="False">False</property>
+		<property name="Visible" vt="True">True</property>
+		<property name="Style" vt="Int32">-1798701056</property>
+		<property name="ExStyle" vt="Int16">256</property>
+		<property name="Version" vt="String">1.04</property>
+		<property name="FormOptOnEvent" vt="False">False</property>
+		<property name="FormOptExpVars" vt="False">False</property>
+		<property name="FormOptPopulate" vt="False">False</property>
+		<property name="FormOptVarsForSet" vt="False">False</property>
+		<property name="FormOptIndentChar" vt="Int8">0</property>
+		<property name="FormOptIndentCount" vt="Int8">1</property>
+		<property name="FormOptIndentInit" vt="Int8">0</property>
+		<property name="FormOptVarScope" vt="Int8">0</property>
+		<property name="Resizing" vt="Set"/>
+		<property name="PixelsPerInch" vt="Int8">96</property>
+		<property name="TextHeight" vt="Int8">13</property>
+	</properties>
+	<components>
+		<object type="TAGraphic" name="Graphic1">
+			<properties>
+				<property name="Left" vt="Int8">8</property>
+				<property name="Top" vt="Int8">8</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">0</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic2">
+			<properties>
+				<property name="Left" vt="Int8">40</property>
+				<property name="Top" vt="Int8">8</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">1</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic3">
+			<properties>
+				<property name="Left" vt="Int8">72</property>
+				<property name="Top" vt="Int8">8</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">2</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic4">
+			<properties>
+				<property name="Left" vt="Int8">104</property>
+				<property name="Top" vt="Int8">8</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">3</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic5">
+			<properties>
+				<property name="Left" vt="Int16">136</property>
+				<property name="Top" vt="Int8">8</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">4</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic6">
+			<properties>
+				<property name="Left" vt="Int16">168</property>
+				<property name="Top" vt="Int8">8</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">5</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic7">
+			<properties>
+				<property name="Left" vt="Int16">200</property>
+				<property name="Top" vt="Int8">8</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">6</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic8">
+			<properties>
+				<property name="Left" vt="Int16">232</property>
+				<property name="Top" vt="Int8">8</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">7</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic9">
+			<properties>
+				<property name="Left" vt="Int8">8</property>
+				<property name="Top" vt="Int8">40</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">8</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic10">
+			<properties>
+				<property name="Left" vt="Int8">40</property>
+				<property name="Top" vt="Int8">40</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">9</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic11">
+			<properties>
+				<property name="Left" vt="Int8">72</property>
+				<property name="Top" vt="Int8">40</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">10</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic12">
+			<properties>
+				<property name="Left" vt="Int8">104</property>
+				<property name="Top" vt="Int8">40</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">11</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic13">
+			<properties>
+				<property name="Left" vt="Int16">136</property>
+				<property name="Top" vt="Int8">40</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">12</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic14">
+			<properties>
+				<property name="Left" vt="Int16">168</property>
+				<property name="Top" vt="Int8">40</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">13</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic15">
+			<properties>
+				<property name="Left" vt="Int16">200</property>
+				<property name="Top" vt="Int8">40</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">14</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic16">
+			<properties>
+				<property name="Left" vt="Int16">232</property>
+				<property name="Top" vt="Int8">40</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">15</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic17">
+			<properties>
+				<property name="Left" vt="Int8">8</property>
+				<property name="Top" vt="Int8">72</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">16</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic18">
+			<properties>
+				<property name="Left" vt="Int8">40</property>
+				<property name="Top" vt="Int8">72</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">17</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic19">
+			<properties>
+				<property name="Left" vt="Int8">72</property>
+				<property name="Top" vt="Int8">72</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">18</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic20">
+			<properties>
+				<property name="Left" vt="Int8">104</property>
+				<property name="Top" vt="Int8">72</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">19</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic21">
+			<properties>
+				<property name="Left" vt="Int16">136</property>
+				<property name="Top" vt="Int8">72</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">20</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic22">
+			<properties>
+				<property name="Left" vt="Int16">168</property>
+				<property name="Top" vt="Int8">72</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">21</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic23">
+			<properties>
+				<property name="Left" vt="Int16">200</property>
+				<property name="Top" vt="Int8">72</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">22</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic24">
+			<properties>
+				<property name="Left" vt="Int16">232</property>
+				<property name="Top" vt="Int8">72</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">23</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic25">
+			<properties>
+				<property name="Left" vt="Int8">8</property>
+				<property name="Top" vt="Int8">104</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">24</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic26">
+			<properties>
+				<property name="Left" vt="Int8">40</property>
+				<property name="Top" vt="Int8">104</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">25</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic27">
+			<properties>
+				<property name="Left" vt="Int8">72</property>
+				<property name="Top" vt="Int8">104</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">26</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic28">
+			<properties>
+				<property name="Left" vt="Int8">104</property>
+				<property name="Top" vt="Int8">104</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">27</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic29">
+			<properties>
+				<property name="Left" vt="Int16">136</property>
+				<property name="Top" vt="Int8">104</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">28</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic30">
+			<properties>
+				<property name="Left" vt="Int16">168</property>
+				<property name="Top" vt="Int8">104</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">29</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic31">
+			<properties>
+				<property name="Left" vt="Int16">200</property>
+				<property name="Top" vt="Int8">104</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">30</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic32">
+			<properties>
+				<property name="Left" vt="Int16">232</property>
+				<property name="Top" vt="Int8">104</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">31</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic33">
+			<properties>
+				<property name="Left" vt="Int8">8</property>
+				<property name="Top" vt="Int16">136</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">32</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic34">
+			<properties>
+				<property name="Left" vt="Int8">40</property>
+				<property name="Top" vt="Int16">136</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">33</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic35">
+			<properties>
+				<property name="Left" vt="Int8">72</property>
+				<property name="Top" vt="Int16">136</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">34</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic36">
+			<properties>
+				<property name="Left" vt="Int8">104</property>
+				<property name="Top" vt="Int16">136</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">35</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic37">
+			<properties>
+				<property name="Left" vt="Int16">136</property>
+				<property name="Top" vt="Int16">136</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">36</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic38">
+			<properties>
+				<property name="Left" vt="Int16">168</property>
+				<property name="Top" vt="Int16">136</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">37</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic39">
+			<properties>
+				<property name="Left" vt="Int16">200</property>
+				<property name="Top" vt="Int16">136</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">38</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic40">
+			<properties>
+				<property name="Left" vt="Int16">232</property>
+				<property name="Top" vt="Int16">136</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">39</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic41">
+			<properties>
+				<property name="Left" vt="Int8">8</property>
+				<property name="Top" vt="Int16">168</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">40</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic42">
+			<properties>
+				<property name="Left" vt="Int8">40</property>
+				<property name="Top" vt="Int16">168</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">41</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic43">
+			<properties>
+				<property name="Left" vt="Int8">72</property>
+				<property name="Top" vt="Int16">168</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">42</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic44">
+			<properties>
+				<property name="Left" vt="Int8">104</property>
+				<property name="Top" vt="Int16">168</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">43</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic45">
+			<properties>
+				<property name="Left" vt="Int16">136</property>
+				<property name="Top" vt="Int16">168</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">44</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic46">
+			<properties>
+				<property name="Left" vt="Int16">168</property>
+				<property name="Top" vt="Int16">168</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">45</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic47">
+			<properties>
+				<property name="Left" vt="Int16">200</property>
+				<property name="Top" vt="Int16">168</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">46</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic48">
+			<properties>
+				<property name="Left" vt="Int16">232</property>
+				<property name="Top" vt="Int16">168</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">47</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic49">
+			<properties>
+				<property name="Left" vt="Int8">8</property>
+				<property name="Top" vt="Int16">200</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">48</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic50">
+			<properties>
+				<property name="Left" vt="Int8">40</property>
+				<property name="Top" vt="Int16">200</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">49</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic51">
+			<properties>
+				<property name="Left" vt="Int8">72</property>
+				<property name="Top" vt="Int16">200</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">50</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic52">
+			<properties>
+				<property name="Left" vt="Int8">104</property>
+				<property name="Top" vt="Int16">200</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">51</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic53">
+			<properties>
+				<property name="Left" vt="Int16">136</property>
+				<property name="Top" vt="Int16">200</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">52</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic54">
+			<properties>
+				<property name="Left" vt="Int16">168</property>
+				<property name="Top" vt="Int16">200</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">53</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic55">
+			<properties>
+				<property name="Left" vt="Int16">200</property>
+				<property name="Top" vt="Int16">200</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">54</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic56">
+			<properties>
+				<property name="Left" vt="Int16">232</property>
+				<property name="Top" vt="Int16">200</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">55</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic57">
+			<properties>
+				<property name="Left" vt="Int8">8</property>
+				<property name="Top" vt="Int16">232</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">56</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic58">
+			<properties>
+				<property name="Left" vt="Int8">40</property>
+				<property name="Top" vt="Int16">232</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">57</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic59">
+			<properties>
+				<property name="Left" vt="Int8">72</property>
+				<property name="Top" vt="Int16">232</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">58</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic60">
+			<properties>
+				<property name="Left" vt="Int8">104</property>
+				<property name="Top" vt="Int16">232</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">59</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic61">
+			<properties>
+				<property name="Left" vt="Int16">136</property>
+				<property name="Top" vt="Int16">232</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">60</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic62">
+			<properties>
+				<property name="Left" vt="Int16">168</property>
+				<property name="Top" vt="Int16">232</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">61</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic63">
+			<properties>
+				<property name="Left" vt="Int16">200</property>
+				<property name="Top" vt="Int16">232</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">62</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TAGraphic" name="Graphic64">
+			<properties>
+				<property name="Left" vt="Int16">232</property>
+				<property name="Top" vt="Int16">232</property>
+				<property name="Width" vt="Int8">33</property>
+				<property name="Height" vt="Int8">33</property>
+				<property name="AutoSize" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">63</property>
+				<property name="CtrlStyle" vt="Int32">1342177536</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="BgColor" vt="Ident">clBtnFace</property>
+				<property name="Resizing" vt="Set"/>
+				<property name="Items" vt="Collection">
+					<collection/>
+				</property>
+			</properties>
+			<components/>
+		</object>
+	</components>
+</object>
